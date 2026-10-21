@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" font-family="-apple-system,'PingFang SC','Microsoft YaHei',Segoe UI,sans-serif">
+  <rect width="880" height="480" fill="#ffffff"/>
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8c8c8c"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1677ff"/></marker>
+    <marker id="gn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#389e0d"/></marker>
+    <marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d46b08"/></marker>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#722ed1"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#cf1322"/></marker>
+  </defs>
+  <text x="40" y="32" font-size="17" font-weight="700" fill="#1f1f1f">四种实时通信方案时序对比</text>
+
+  <!-- 行 1：短轮询 -->
+  <text x="40" y="86" font-size="14" font-weight="700" fill="#1f1f1f">短轮询 Polling</text>
+  <rect x="24" y="98" width="104" height="40" rx="8" fill="#e6f4ff" stroke="#1677ff" stroke-width="1.5"/>
+  <text x="76" y="123" font-size="13" fill="#1f1f1f" text-anchor="middle">客户端</text>
+  <rect x="752" y="98" width="104" height="40" rx="8" fill="#f6ffed" stroke="#389e0d" stroke-width="1.5"/>
+  <text x="804" y="123" font-size="13" fill="#1f1f1f" text-anchor="middle">服务端</text>
+  <line x1="150" y1="112" x2="252" y2="112" stroke="#8c8c8c" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="292" y1="112" x2="394" y2="112" stroke="#8c8c8c" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="434" y1="112" x2="536" y2="112" stroke="#8c8c8c" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="576" y1="112" x2="678" y2="112" stroke="#8c8c8c" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="252" y1="134" x2="150" y2="134" stroke="#cf1322" stroke-width="1.6" marker-end="url(#r)"/>
+  <line x1="394" y1="134" x2="292" y2="134" stroke="#cf1322" stroke-width="1.6" marker-end="url(#r)"/>
+  <line x1="536" y1="134" x2="434" y2="134" stroke="#cf1322" stroke-width="1.6" marker-end="url(#r)"/>
+  <line x1="678" y1="134" x2="576" y2="134" stroke="#389e0d" stroke-width="1.6" marker-end="url(#gn)"/>
+  <text x="201" y="152" font-size="11" fill="#cf1322" text-anchor="middle">无数据</text>
+  <text x="343" y="152" font-size="11" fill="#cf1322" text-anchor="middle">无数据</text>
+  <text x="485" y="152" font-size="11" fill="#cf1322" text-anchor="middle">无数据</text>
+  <text x="627" y="152" font-size="11" fill="#389e0d" text-anchor="middle">有数据</text>
+  <text x="440" y="172" font-size="12" fill="#8c8c8c" text-anchor="middle">定时反复询问，绝大多数请求是空跑 —— 延迟高、浪费严重</text>
+
+  <!-- 行 2：长轮询 -->
+  <text x="40" y="190" font-size="14" font-weight="700" fill="#1f1f1f">长轮询 Long Polling</text>
+  <rect x="24" y="202" width="104" height="40" rx="8" fill="#e6f4ff" stroke="#1677ff" stroke-width="1.5"/>
+  <text x="76" y="227" font-size="13" fill="#1f1f1f" text-anchor="middle">客户端</text>
+  <rect x="752" y="202" width="104" height="40" rx="8" fill="#f6ffed" stroke="#389e0d" stroke-width="1.5"/>
+  <text x="804" y="227" font-size="13" fill="#1f1f1f" text-anchor="middle">服务端</text>
+  <line x1="150" y1="216" x2="300" y2="216" stroke="#8c8c8c" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="300" y1="216" x2="560" y2="216" stroke="#d46b08" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <line x1="560" y1="238" x2="150" y2="238" stroke="#d46b08" stroke-width="1.6" marker-end="url(#o)"/>
+  <line x1="600" y1="216" x2="700" y2="216" stroke="#8c8c8c" stroke-width="1.6" marker-end="url(#g)"/>
+  <text x="430" y="208" font-size="11" fill="#d46b08" text-anchor="middle">请求挂起等待…</text>
+  <text x="355" y="256" font-size="11" fill="#d46b08" text-anchor="middle">有数据时才返回</text>
+  <text x="650" y="208" font-size="11" fill="#8c8c8c" text-anchor="middle">立即再请求</text>
+  <text x="440" y="276" font-size="12" fill="#8c8c8c" text-anchor="middle">延迟降低，但每条数据仍要重建一次 HTTP 请求</text>
+
+  <!-- 行 3：SSE -->
+  <text x="40" y="294" font-size="14" font-weight="700" fill="#1f1f1f">SSE 服务器推送事件</text>
+  <rect x="24" y="306" width="104" height="40" rx="8" fill="#e6f4ff" stroke="#1677ff" stroke-width="1.5"/>
+  <text x="76" y="331" font-size="13" fill="#1f1f1f" text-anchor="middle">客户端</text>
+  <rect x="752" y="306" width="104" height="40" rx="8" fill="#f6ffed" stroke="#389e0d" stroke-width="1.5"/>
+  <text x="804" y="331" font-size="13" fill="#1f1f1f" text-anchor="middle">服务端</text>
+  <line x1="150" y1="320" x2="240" y2="320" stroke="#722ed1" stroke-width="1.6" marker-end="url(#p)"/>
+  <text x="195" y="312" font-size="11" fill="#722ed1" text-anchor="middle">建立连接</text>
+  <line x1="330" y1="342" x2="210" y2="342" stroke="#389e0d" stroke-width="1.6" marker-end="url(#gn)"/>
+  <line x1="480" y1="342" x2="360" y2="342" stroke="#389e0d" stroke-width="1.6" marker-end="url(#gn)"/>
+  <line x1="630" y1="342" x2="510" y2="342" stroke="#389e0d" stroke-width="1.6" marker-end="url(#gn)"/>
+  <text x="430" y="360" font-size="11" fill="#389e0d" text-anchor="middle">持续推送文本事件流…</text>
+  <text x="440" y="380" font-size="12" fill="#8c8c8c" text-anchor="middle">一条 HTTP 长连接只做下行推送，客户端无法通过它回发数据</text>
+
+  <!-- 行 4：WebSocket -->
+  <text x="40" y="398" font-size="14" font-weight="700" fill="#1f1f1f">WebSocket</text>
+  <rect x="24" y="410" width="104" height="40" rx="8" fill="#e6f4ff" stroke="#1677ff" stroke-width="1.5"/>
+  <text x="76" y="435" font-size="13" fill="#1f1f1f" text-anchor="middle">客户端</text>
+  <rect x="752" y="410" width="104" height="40" rx="8" fill="#f6ffed" stroke="#389e0d" stroke-width="1.5"/>
+  <text x="804" y="435" font-size="13" fill="#1f1f1f" text-anchor="middle">服务端</text>
+  <line x1="150" y1="424" x2="255" y2="424" stroke="#722ed1" stroke-width="1.8" marker-end="url(#p)"/>
+  <line x1="255" y1="442" x2="150" y2="442" stroke="#722ed1" stroke-width="1.8" marker-end="url(#p)"/>
+  <text x="202" y="416" font-size="11" fill="#722ed1" text-anchor="middle">HTTP 握手</text>
+  <text x="202" y="460" font-size="11" fill="#722ed1" text-anchor="middle">101</text>
+  <line x1="420" y1="424" x2="300" y2="424" stroke="#389e0d" stroke-width="1.8" marker-end="url(#gn)"/>
+  <line x1="450" y1="442" x2="570" y2="442" stroke="#1677ff" stroke-width="1.8" marker-end="url(#b)"/>
+  <line x1="690" y1="424" x2="590" y2="424" stroke="#389e0d" stroke-width="1.8" marker-end="url(#gn)"/>
+  <text x="440" y="470" font-size="12" fill="#8c8c8c" text-anchor="middle">一次握手后全双工互通，双方随时互发，帧头最小仅 2 字节</text>
+</svg>

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+  <rect width="1200" height="800" fill="#F0F6FF"/>
+  <rect x="14" y="14" width="1172" height="772" rx="26" fill="none" stroke="#0E1E33" stroke-width="4"/>
+  <defs><marker id="a7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0E1E33"/></marker><marker id="ar7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#EF4444"/></marker></defs>
+
+  <rect x="44" y="38" width="600" height="72" rx="16" fill="#0E1E33"/>
+  <text x="70" y="72" font-size="28" font-weight="bold" fill="#EF4444">第七幕 · 黑客来敲门</text>
+  <text x="70" y="99" font-size="16" fill="#FFFFFF">CSWSH 跨站劫持 · wss 传输加密 · 六道防线（全部实测）</text>
+
+  <!-- 左格：CSWSH -->
+  <g>
+    <rect x="44" y="130" width="420" height="500" rx="16" fill="#FFFFFF" stroke="#0E1E33" stroke-width="3"/>
+    <text x="64" y="160" font-size="16" font-weight="bold" fill="#EF4444">① CSWSH：恶意网页借刀杀人</text>
+
+    <!-- 黑客 -->
+    <g transform="translate(130,250)">
+      <path d="M -34 40 L -34 -6 A 34 34 0 0 1 34 -6 L 34 40 Z" fill="#1F2937" stroke="#0E1E33" stroke-width="2.6"/>
+      <ellipse cx="0" cy="-12" rx="26" ry="24" fill="#111827"/>
+      <circle cx="-9" cy="-12" r="3.4" fill="#EF4444"/><circle cx="9" cy="-12" r="3.4" fill="#EF4444"/>
+      <path d="M -30 -30 Q 0 -52 30 -30" fill="none" stroke="#0E1E33" stroke-width="6"/>
+      <text x="0" y="68" font-size="12" text-anchor="middle" fill="#0E1E33">黑客的钓鱼页</text>
+    </g>
+    <!-- 受害者浏览器 -->
+    <g transform="translate(330,250)">
+      <rect x="-40" y="-34" width="80" height="68" rx="10" fill="#DBEAFE" stroke="#0E1E33" stroke-width="2.6"/>
+      <rect x="-40" y="-34" width="80" height="18" rx="10" fill="#2563EB"/>
+      <circle cx="-27" cy="-25" r="3" fill="#EF4444"/><circle cx="-17" cy="-25" r="3" fill="#F59E0B"/><circle cx="-7" cy="-25" r="3" fill="#10B981"/>
+      <circle cx="-10" cy="2" r="4" fill="#0E1E33"/><circle cx="10" cy="2" r="4" fill="#0E1E33"/>
+      <path d="M -9 18 Q 0 10 9 18" fill="none" stroke="#0E1E33" stroke-width="2.4"/>
+      <text x="0" y="56" font-size="12" text-anchor="middle">受害者小浏</text>
+    </g>
+    <!-- 攻击箭头 -->
+    <line x1="168" y1="232" x2="284" y2="228" stroke="#EF4444" stroke-width="2.6" marker-end="url(#ar7)"/>
+    <text x="226" y="220" font-size="11" text-anchor="middle" fill="#B91C1C">植入脚本</text>
+
+    <!-- 服叔 + 连接 -->
+    <g transform="translate(230,430)">
+      <rect x="-48" y="-40" width="96" height="80" rx="12" fill="#CFFAFE" stroke="#0E1E33" stroke-width="2.8"/>
+      <rect x="-36" y="-24" width="72" height="7" rx="3.5" fill="#0E1E33"/>
+      <rect x="-36" y="-8" width="72" height="7" rx="3.5" fill="#0E1E33"/>
+      <rect x="-36" y="8" width="72" height="7" rx="3.5" fill="#0E1E33"/>
+      <circle cx="34" cy="28" r="5" fill="#10B981"/>
+      <text x="0" y="62" font-size="12" text-anchor="middle">服叔（真网站）</text>
+    </g>
+    <line x1="310" y1="290" x2="268" y2="384" stroke="#EF4444" stroke-width="2.6" stroke-dasharray="7 5" marker-end="url(#ar7)"/>
+    <text x="330" y="340" font-size="11" fill="#B91C1C">自动发起 ws 连接，</text>
+    <text x="330" y="356" font-size="11" fill="#B91C1C">Cookie 自动带上！</text>
+
+    <!-- 门禁拦截 -->
+    <g transform="translate(110,430)">
+      <rect x="-56" y="-42" width="112" height="84" rx="12" fill="#FEF2F2" stroke="#EF4444" stroke-width="3"/>
+      <text x="0" y="-14" font-size="13" font-weight="bold" text-anchor="middle" fill="#B91C1C">Origin 门禁</text>
+      <text x="0" y="8" font-size="11.5" text-anchor="middle" fill="#B91C1C">evil.com ≠</text>
+      <text x="0" y="26" font-size="11.5" text-anchor="middle" fill="#B91C1C">白名单 → 401</text>
+    </g>
+    <line x1="156" y1="430" x2="176" y2="430" stroke="#10B981" stroke-width="3" marker-end="url(#a7)"/>
+
+    <rect x="64" y="548" width="380" height="64" rx="10" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.2"/>
+    <text x="254" y="573" font-size="12" text-anchor="middle" fill="#B91C1C">WebSocket 不受同源策略（CORS）约束，</text>
+    <text x="254" y="593" font-size="12" text-anchor="middle" fill="#B91C1C">但浏览器会自动带 Origin —— 校验权在服务端</text>
+  </g>
+
+  <!-- 右格：六道防线 -->
+  <g>
+    <rect x="480" y="130" width="676" height="416" rx="16" fill="#FFFFFF" stroke="#0E1E33" stroke-width="3"/>
+    <text x="500" y="160" font-size="16" font-weight="bold" fill="#10B981">② 六道防线（secure-server.js · 实测全部生效）</text>
+
+    <g font-size="12.5" fill="#0E1E33">
+      <rect x="500" y="178" width="636" height="52" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+      <circle cx="528" cy="204" r="15" fill="#2563EB"/><text x="528" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#FFF">1</text>
+      <text x="554" y="200" font-weight="bold">Origin 白名单</text>
+      <text x="554" y="220" font-size="11.5">verifyClient 只放行 localhost:5173 / 127.0.0.1:5173</text>
+      <rect x="1046" y="186" width="74" height="26" rx="13" fill="#DBEAFE"/><text x="1083" y="204" font-size="11.5" text-anchor="middle" fill="#1D4ED8">HTTP 401</text>
+
+      <rect x="500" y="236" width="636" height="52" rx="10" fill="#ECFEFF" stroke="#06B6D4" stroke-width="2"/>
+      <circle cx="528" cy="262" r="15" fill="#06B6D4"/><text x="528" y="267" font-size="13" font-weight="bold" text-anchor="middle" fill="#0E1E33">2</text>
+      <text x="554" y="258" font-weight="bold">Token 鉴权</text>
+      <text x="554" y="278" font-size="11.5">握手 URL 校验 token（WHATWG URL 解析，勿用已弃用 url.parse）</text>
+      <rect x="1046" y="244" width="74" height="26" rx="13" fill="#CFFAFE"/><text x="1083" y="262" font-size="11.5" text-anchor="middle" fill="#0E7490">HTTP 401</text>
+
+      <rect x="500" y="294" width="636" height="52" rx="10" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="528" cy="320" r="15" fill="#8B5CF6"/><text x="528" y="325" font-size="13" font-weight="bold" text-anchor="middle" fill="#FFF">3</text>
+      <text x="554" y="316" font-weight="bold">消息大小上限 maxPayload = 4KB</text>
+      <text x="554" y="336" font-size="11.5">超限帧由 ws 库自动拦截</text>
+      <rect x="1046" y="302" width="74" height="26" rx="13" fill="#EDE9FE"/><text x="1083" y="320" font-size="11.5" text-anchor="middle" fill="#6D28D9">1009</text>
+
+      <rect x="500" y="352" width="636" height="52" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+      <circle cx="528" cy="378" r="15" fill="#F59E0B"/><text x="528" y="383" font-size="13" font-weight="bold" text-anchor="middle" fill="#0E1E33">4</text>
+      <text x="554" y="374" font-weight="bold">单 IP 最多 3 条连接</text>
+      <text x="554" y="394" font-size="11.5">Map 计数，防单机占满连接池</text>
+      <rect x="1046" y="360" width="74" height="26" rx="13" fill="#FEF3C7"/><text x="1083" y="378" font-size="11.5" text-anchor="middle" fill="#B45309">1013</text>
+
+      <rect x="500" y="410" width="636" height="52" rx="10" fill="#FDF2F8" stroke="#EC4899" stroke-width="2"/>
+      <circle cx="528" cy="436" r="15" fill="#EC4899"/><text x="528" y="441" font-size="13" font-weight="bold" text-anchor="middle" fill="#FFF">5</text>
+      <text x="554" y="432" font-weight="bold">滑动窗口限流：1 秒最多 5 条</text>
+      <text x="554" y="452" font-size="11.5">消息洪泛直接断开（闭锁标记防重复告警）</text>
+      <rect x="1046" y="418" width="74" height="26" rx="13" fill="#FCE7F3"/><text x="1083" y="436" font-size="11.5" text-anchor="middle" fill="#BE185D">1013</text>
+
+      <rect x="500" y="468" width="636" height="60" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+      <circle cx="528" cy="498" r="15" fill="#10B981"/><text x="528" y="503" font-size="13" font-weight="bold" text-anchor="middle" fill="#FFF">6</text>
+      <text x="554" y="492" font-weight="bold">JSON try-catch + 字段白名单</text>
+      <text x="554" y="512" font-size="11.5">text 必须 1~500 字符；非法数据回 error，不连坐断开</text>
+      <rect x="1034" y="482" width="86" height="26" rx="13" fill="#D1FAE5"/><text x="1077" y="500" font-size="11" text-anchor="middle" fill="#047857">回 error</text>
+    </g>
+  </g>
+
+  <!-- 右下：实测徽章 + wss（加高至 80，底部 632，与金句条 648 留 16 间距） -->
+  <g>
+    <rect x="480" y="552" width="330" height="80" rx="14" fill="#0E1E33"/>
+    <text x="500" y="578" font-size="13.5" font-weight="bold" fill="#10B981">security-test.js 六个用例实测</text>
+    <text x="500" y="600" font-size="12" fill="#E2E8F0">合法回显 ✅ 伪造源 401 ✅ 坏 token 401 ✅</text>
+    <text x="500" y="622" font-size="12" fill="#E2E8F0">5KB→1009 ✅ 7 连发→1013 ✅ 坏 JSON 提示 ✅</text>
+
+    <rect x="826" y="552" width="330" height="80" rx="14" fill="#1E3A5F" stroke="#06B6D4" stroke-width="2.4"/>
+    <text x="991" y="578" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#67E8F9">生产只用 wss://</text>
+    <text x="991" y="600" font-size="11.5" text-anchor="middle" fill="#E2E8F0">掩码 ≠ 加密：密钥明文在帧头</text>
+    <text x="991" y="622" font-size="11.5" text-anchor="middle" fill="#E2E8F0">机密性只能靠 TLS（RFC 6455 §10.6）</text>
+  </g>
+
+  <!-- 底部 -->
+  <rect x="44" y="648" width="1112" height="112" rx="16" fill="#0E1E33"/>
+  <text x="64" y="682" font-size="15" font-weight="bold" fill="#EF4444">纵深防御原则</text>
+  <text x="64" y="712" font-size="14" fill="#FFFFFF">Origin 只是第一道门：curl/脚本等非浏览器客户端能伪造任意头，必须再做 Token 鉴权；连接合法 ≠ 每条消息合法，</text>
+  <text x="64" y="738" font-size="14" fill="#FFFFFF">消息级业务授权 + 输入校验一道都不能少。完整威胁模型、RFC 6455 §10 逐条解读与自查清单见主线第 7 章（含 7.9 规范解读）。</text>
+</svg>

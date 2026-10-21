@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" font-family="-apple-system,'PingFang SC','Microsoft YaHei',Segoe UI,sans-serif">
+  <rect width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1677ff"/></marker>
+  </defs>
+  <text x="40" y="34" font-size="17" font-weight="700" fill="#1f1f1f">纵深防御：WebSocket 安全的五道关卡</text>
+
+  <!-- 客户端 -->
+  <rect x="40" y="180" width="120" height="64" rx="12" fill="#e6f4ff" stroke="#1677ff" stroke-width="1.8"/>
+  <text x="100" y="208" font-size="13.5" font-weight="700" fill="#0b3d91" text-anchor="middle">客户端</text>
+  <text x="100" y="228" font-size="11.5" fill="#595959" text-anchor="middle">wss:// 连接</text>
+
+  <!-- 五道关卡 -->
+  <g>
+    <rect x="190" y="80" width="126" height="264" rx="12" fill="#fff1f0" stroke="#cf1322" stroke-width="1.8"/>
+    <text x="253" y="112" font-size="13" font-weight="700" fill="#a8071a" text-anchor="middle">第 1 关</text>
+    <text x="253" y="140" font-size="12.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">传输加密</text>
+    <text x="253" y="172" font-size="11.5" fill="#595959" text-anchor="middle">TLS (wss)</text>
+    <text x="253" y="192" font-size="11.5" fill="#595959" text-anchor="middle">防窃听/篡改</text>
+    <text x="253" y="232" font-size="11" fill="#8c8c8c" text-anchor="middle">明文 ws:// 仅可</text>
+    <text x="253" y="248" font-size="11" fill="#8c8c8c" text-anchor="middle">用于本地调试</text>
+
+    <rect x="328" y="80" width="126" height="264" rx="12" fill="#fff7e6" stroke="#d46b08" stroke-width="1.8"/>
+    <text x="391" y="112" font-size="13" font-weight="700" fill="#ad4e00" text-anchor="middle">第 2 关</text>
+    <text x="391" y="140" font-size="12.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">网关层</text>
+    <text x="391" y="172" font-size="11.5" fill="#595959" text-anchor="middle">连接数限制</text>
+    <text x="391" y="192" font-size="11.5" fill="#595959" text-anchor="middle">WAF / 限流</text>
+    <text x="391" y="212" font-size="11.5" fill="#595959" text-anchor="middle">IP 黑名单</text>
+    <text x="391" y="232" font-size="11.5" fill="#595959" text-anchor="middle">TLS 终止</text>
+
+    <rect x="466" y="80" width="126" height="264" rx="12" fill="#f9f0ff" stroke="#722ed1" stroke-width="1.8"/>
+    <text x="529" y="112" font-size="13" font-weight="700" fill="#391085" text-anchor="middle">第 3 关</text>
+    <text x="529" y="140" font-size="12.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">握手门禁</text>
+    <text x="529" y="172" font-size="11.5" fill="#595959" text-anchor="middle">Origin 白名单</text>
+    <text x="529" y="192" font-size="11.5" fill="#595959" text-anchor="middle">Token 鉴权</text>
+    <text x="529" y="212" font-size="11.5" fill="#595959" text-anchor="middle">失败即 401</text>
+    <text x="529" y="232" font-size="11.5" fill="#595959" text-anchor="middle">不进业务层</text>
+
+    <rect x="604" y="80" width="126" height="264" rx="12" fill="#e6f4ff" stroke="#1677ff" stroke-width="1.8"/>
+    <text x="667" y="112" font-size="13" font-weight="700" fill="#0b3d91" text-anchor="middle">第 4 关</text>
+    <text x="667" y="140" font-size="12.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">消息门</text>
+    <text x="667" y="172" font-size="11.5" fill="#595959" text-anchor="middle">大小上限</text>
+    <text x="667" y="192" font-size="11.5" fill="#595959" text-anchor="middle">频率限制</text>
+    <text x="667" y="212" font-size="11.5" fill="#595959" text-anchor="middle">JSON/Schema</text>
+    <text x="667" y="232" font-size="11.5" fill="#595959" text-anchor="middle">严格校验</text>
+
+    <rect x="742" y="80" width="100" height="264" rx="12" fill="#f6ffed" stroke="#389e0d" stroke-width="1.8"/>
+    <text x="792" y="112" font-size="13" font-weight="700" fill="#135200" text-anchor="middle">第 5 关</text>
+    <text x="792" y="140" font-size="12.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">业务授权</text>
+    <text x="792" y="172" font-size="11.5" fill="#595959" text-anchor="middle">每条消息</text>
+    <text x="792" y="192" font-size="11.5" fill="#595959" text-anchor="middle">检查权限</text>
+    <text x="792" y="212" font-size="11.5" fill="#595959" text-anchor="middle">房间/资源</text>
+    <text x="792" y="232" font-size="11.5" fill="#595959" text-anchor="middle">级隔离</text>
+  </g>
+
+  <!-- 流向箭头 -->
+  <line x1="160" y1="212" x2="188" y2="212" stroke="#1677ff" stroke-width="2" marker-end="url(#b)"/>
+  <line x1="316" y1="212" x2="326" y2="212" stroke="#1677ff" stroke-width="2" marker-end="url(#b)"/>
+  <line x1="454" y1="212" x2="464" y2="212" stroke="#1677ff" stroke-width="2" marker-end="url(#b)"/>
+  <line x1="592" y1="212" x2="602" y2="212" stroke="#1677ff" stroke-width="2" marker-end="url(#b)"/>
+  <line x1="730" y1="212" x2="740" y2="212" stroke="#1677ff" stroke-width="2" marker-end="url(#b)"/>
+
+  <rect x="120" y="372" width="640" height="34" rx="17" fill="#fafafa" stroke="#d9d9d9"/>
+  <text x="440" y="394" font-size="12.5" fill="#595959" text-anchor="middle">原则：任何一道关卡都可能失守，多层独立校验让攻击者必须连续绕过全部防线</text>
+</svg>

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+  <rect width="1200" height="800" fill="#F0F6FF"/>
+  <rect x="14" y="14" width="1172" height="772" rx="26" fill="none" stroke="#0E1E33" stroke-width="4"/>
+  <defs><marker id="a5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0E1E33"/></marker></defs>
+
+  <rect x="44" y="38" width="640" height="72" rx="16" fill="#0E1E33"/>
+  <text x="70" y="72" font-size="28" font-weight="bold" fill="#F59E0B">第五幕 · 跨语言的握手</text>
+  <text x="70" y="99" font-size="16" fill="#FFFFFF">Python websockets 15 · asyncio · RFC 6455 让天下客户端皆可互连</text>
+
+  <!-- 左格：Python -->
+  <g>
+    <rect x="44" y="130" width="380" height="500" rx="16" fill="#FFFFFF" stroke="#0E1E33" stroke-width="3"/>
+    <text x="64" y="160" font-size="16" font-weight="bold" fill="#2563EB">① 派小森：Python 客户端</text>
+
+    <!-- 派小森角色：终端窗口 + 蛇标 -->
+    <g transform="translate(234,232)">
+      <rect x="-72" y="-58" width="144" height="116" rx="12" fill="#0E1E33" stroke="#0E1E33" stroke-width="2.6"/>
+      <rect x="-72" y="-58" width="144" height="24" rx="12" fill="#1E293B"/>
+      <rect x="-72" y="-46" width="144" height="12" fill="#1E293B"/>
+      <circle cx="-54" cy="-46" r="4" fill="#EF4444"/><circle cx="-40" cy="-46" r="4" fill="#F59E0B"/><circle cx="-26" cy="-46" r="4" fill="#10B981"/>
+      <text x="14" y="-42" font-size="11" fill="#94A3B8" text-anchor="middle">python3 client.py</text>
+      <text x="-56" y="-14" font-size="11.5" fill="#67E8F9">&gt;&gt;&gt; import websockets</text>
+      <text x="-56" y="8" font-size="11.5" fill="#A7F3D0">&gt;&gt;&gt; asyncio 原生</text>
+      <text x="-56" y="30" font-size="11.5" fill="#FDE68A">&gt;&gt;&gt; v15.0.1 实测</text>
+      <!-- 小蛇 -->
+      <path d="M 44 40 q 14 -10 28 0 q 14 10 28 0 v 10 q -14 10 -28 0 q -14 -10 -28 0 Z" fill="#F59E0B"/>
+      <circle cx="96" cy="44" r="2" fill="#0E1E33"/>
+    </g>
+    <text x="234" y="314" font-size="12.5" text-anchor="middle" fill="#0E1E33">派小森（Python · websockets 库）</text>
+
+    <!-- 代码卡 -->
+    <rect x="64" y="334" width="340" height="190" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+    <text x="80" y="358" font-size="12" fill="#0E1E33">uri = "ws://localhost:8080"</text>
+    <text x="80" y="380" font-size="12" fill="#0E1E33">async with websockets.connect(uri) as ws:</text>
+    <text x="96" y="402" font-size="12" fill="#0E1E33">await ws.send("你好，WebSocket！")</text>
+    <text x="96" y="424" font-size="12" fill="#0E1E33">reply = await ws.recv()</text>
+    <text x="80" y="446" font-size="12" fill="#0E1E33"># 服务端：async for message in ws</text>
+    <text x="80" y="468" font-size="12" fill="#0E1E33"># 服务端关闭用 ws.close()；旧教程里的</text>
+    <text x="80" y="488" font-size="12" fill="#0E1E33"># ws.open 已移除，改用 state == OPEN</text>
+    <text x="234" y="518" font-size="11" text-anchor="middle" fill="#2563EB">examples/python/chat_server.py · client.py</text>
+
+    <!-- 连接箭头到右区 -->
+    <line x1="424" y1="232" x2="452" y2="232" stroke="#F59E0B" stroke-width="4" marker-end="url(#a5)"/>
+  </g>
+
+  <!-- 右上：三方互通 -->
+  <g>
+    <rect x="440" y="130" width="716" height="392" rx="16" fill="#FFFFFF" stroke="#0E1E33" stroke-width="3"/>
+    <text x="460" y="160" font-size="16" font-weight="bold" fill="#06B6D4">② 只要实现 RFC 6455，谁都能坐上同一张桌子</text>
+
+    <!-- 中央 Node 服叔 -->
+    <g transform="translate(798,324)">
+      <rect x="-64" y="-58" width="128" height="116" rx="14" fill="#CFFAFE" stroke="#0E1E33" stroke-width="3.4"/>
+      <rect x="-48" y="-38" width="96" height="8" rx="4" fill="#0E1E33"/>
+      <rect x="-48" y="-20" width="96" height="8" rx="4" fill="#0E1E33"/>
+      <rect x="-48" y="-2" width="96" height="8" rx="4" fill="#0E1E33"/>
+      <circle cx="42" cy="38" r="7" fill="#10B981"/>
+      <text x="0" y="40" font-size="13" font-weight="bold" text-anchor="middle" fill="#0E1E33">Node 服叔</text>
+      <text x="0" y="76" font-size="11.5" text-anchor="middle" fill="#0E1E33">chat-server.js :8080</text>
+    </g>
+    <!-- 环形连接线 -->
+    <circle cx="798" cy="324" r="150" fill="none" stroke="#06B6D4" stroke-width="2.4" stroke-dasharray="7 6" opacity="0.6"/>
+
+    <!-- 浏览器小浏 -->
+    <g transform="translate(648,204)">
+      <rect x="-40" y="-30" width="80" height="60" rx="10" fill="#DBEAFE" stroke="#0E1E33" stroke-width="2.6"/>
+      <rect x="-40" y="-30" width="80" height="16" rx="10" fill="#2563EB"/>
+      <circle cx="-27" cy="-22" r="2.8" fill="#EF4444"/><circle cx="-17" cy="-22" r="2.8" fill="#F59E0B"/><circle cx="-7" cy="-22" r="2.8" fill="#10B981"/>
+      <text x="0" y="14" font-size="11.5" text-anchor="middle">浏览器小浏</text>
+    </g>
+    <!-- Python 派小森 -->
+    <g transform="translate(952,204)">
+      <rect x="-42" y="-30" width="84" height="60" rx="10" fill="#0E1E33" stroke="#0E1E33" stroke-width="2.6"/>
+      <rect x="-42" y="-30" width="84" height="16" rx="10" fill="#1E293B"/>
+      <text x="0" y="14" font-size="11.5" text-anchor="middle" fill="#FDE68A">Python 派小森</text>
+    </g>
+    <!-- 其他语言 -->
+    <g transform="translate(648,444)">
+      <rect x="-46" y="-28" width="92" height="56" rx="10" fill="#FEF3C7" stroke="#0E1E33" stroke-width="2.4"/>
+      <text x="0" y="-6" font-size="12" font-weight="bold" text-anchor="middle">Java</text>
+      <text x="0" y="14" font-size="10.5" text-anchor="middle">@ServerEndpoint</text>
+    </g>
+    <g transform="translate(952,444)">
+      <rect x="-46" y="-28" width="92" height="56" rx="10" fill="#EDE9FE" stroke="#0E1E33" stroke-width="2.4"/>
+      <text x="0" y="-6" font-size="12" font-weight="bold" text-anchor="middle">Go / C#</text>
+      <text x="0" y="14" font-size="10.5" text-anchor="middle">gorilla · SignalR</text>
+    </g>
+    <!-- 双向箭头 -->
+    <g stroke="#0E1E33" stroke-width="2" fill="none">
+      <line x1="692" y1="240" x2="748" y2="286" marker-end="url(#a5)"/>
+      <line x1="748" y1="296" x2="694" y2="250" marker-end="url(#a5)"/>
+      <line x1="904" y1="286" x2="908" y2="240" marker-end="url(#a5)"/>
+      <line x1="892" y1="244" x2="884" y2="284" marker-end="url(#a5)"/>
+      <line x1="748" y1="364" x2="696" y2="416" marker-end="url(#a5)"/>
+      <line x1="690" y1="406" x2="742" y2="356" marker-end="url(#a5)"/>
+      <line x1="850" y1="364" x2="904" y2="416" marker-end="url(#a5)"/>
+      <line x1="910" y1="406" x2="856" y2="356" marker-end="url(#a5)"/>
+    </g>
+    <text x="798" y="498" font-size="13" text-anchor="middle" fill="#0E1E33">同一种“语言”：帧、掩码、关闭码全部由 RFC 6455 规定</text>
+  </g>
+
+  <!-- 右下：实测输出 -->
+  <g>
+    <rect x="440" y="530" width="716" height="102" rx="16" fill="#FFFFFF" stroke="#0E1E33" stroke-width="3"/>
+    <text x="460" y="556" font-size="14" font-weight="bold" fill="#10B981">③ 混线实测：Python 客户端 ↔ Node 服务端</text>
+    <rect x="460" y="564" width="676" height="56" rx="8" fill="#0E1E33"/>
+    <text x="476" y="584" font-size="11.5" fill="#67E8F9">[Python 客户端] 收到: {"type":"system","text":"用户479 加入了聊天室",...}</text>
+    <text x="476" y="602" font-size="11.5" fill="#E2E8F0">[Python 客户端] 发送: 你好，WebSocket！</text>
+    <text x="476" y="617" font-size="11.5" fill="#A7F3D0">[Node 服务端] 用户479: 你好，WebSocket！　← 两端无缝</text>
+  </g>
+
+  <!-- 底部 -->
+  <rect x="44" y="648" width="1112" height="112" rx="16" fill="#0E1E33"/>
+  <text x="600" y="686" font-size="16" font-weight="bold" text-anchor="middle" fill="#F59E0B">标准化的威力</text>
+  <text x="600" y="716" font-size="14.5" text-anchor="middle" fill="#FFFFFF">协议与编程语言无关：浏览器、Node、Python、Java、Go、C#……任何 RFC 6455 的实现都能互连，</text>
+  <text x="600" y="742" font-size="14.5" text-anchor="middle" fill="#FFFFFF">你甚至可以让 Python 客户端连上 Node 聊天室——消息格式约定一致即可。</text>
+</svg>

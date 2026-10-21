@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" font-family="-apple-system,'PingFang SC','Microsoft YaHei',Segoe UI,sans-serif">
+  <rect width="880" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1677ff"/></marker>
+  </defs>
+  <text x="40" y="34" font-size="17" font-weight="700" fill="#1f1f1f">WebSocket 标准家族与 RFC 6455 文档地图</text>
+
+  <!-- 左：标准家族 -->
+  <text x="40" y="72" font-size="14" font-weight="700" fill="#1f1f1f">一、标准家族（线上协议 ↔ 浏览器 API 是两份标准）</text>
+
+  <rect x="40" y="86" width="390" height="226" rx="12" fill="#f6ffed" stroke="#389e0d" stroke-width="1.8"/>
+  <text x="235" y="114" font-size="13.5" font-weight="700" fill="#135200" text-anchor="middle">线协议：数据线上长什么样</text>
+  <g font-size="12">
+    <rect x="58" y="128" width="354" height="40" rx="8" fill="#ffffff" stroke="#b7eb8f"/>
+    <text x="70" y="146" font-weight="700" fill="#1f1f1f">RFC 6455（2011）核心规范</text>
+    <text x="70" y="162" fill="#595959">握手 · 数据帧 · 关闭 · 状态码 · §10 安全考虑</text>
+
+    <rect x="58" y="176" width="354" height="40" rx="8" fill="#ffffff" stroke="#b7eb8f"/>
+    <text x="70" y="194" font-weight="700" fill="#1f1f1f">RFC 7692（2015）压缩扩展</text>
+    <text x="70" y="210" fill="#595959">permessage-deflate（注意 BREACH 类侧信道）</text>
+
+    <rect x="58" y="224" width="354" height="40" rx="8" fill="#ffffff" stroke="#b7eb8f"/>
+    <text x="70" y="242" font-weight="700" fill="#1f1f1f">RFC 8441（2018）HTTP/2 引导</text>
+    <text x="70" y="258" fill="#595959">用扩展 CONNECT(:protocol) 在 H2 上建 WebSocket</text>
+
+    <rect x="58" y="272" width="354" height="28" rx="8" fill="#ffffff" stroke="#b7eb8f"/>
+    <text x="235" y="291" font-size="11" fill="#1f1f1f" text-anchor="middle">引用基础：RFC 6454 Origin · 6265 Cookie · 7239 Forwarded</text>
+  </g>
+
+  <rect x="450" y="86" width="390" height="226" rx="12" fill="#e6f4ff" stroke="#1677ff" stroke-width="1.8"/>
+  <text x="645" y="114" font-size="13.5" font-weight="700" fill="#0b3d91" text-anchor="middle">编程 API：代码里怎么调用</text>
+  <g font-size="12">
+    <rect x="468" y="128" width="354" height="56" rx="8" fill="#ffffff" stroke="#91caff"/>
+    <text x="480" y="150" font-weight="700" fill="#1f1f1f">WHATWG WebSocket API（Living Standard）</text>
+    <text x="480" y="168" fill="#595959">new WebSocket / onopen / onmessage / onclose</text>
+    <text x="480" y="184" fill="#595959">readyState · bufferedAmount · binaryType</text>
+
+    <rect x="468" y="194" width="354" height="56" rx="8" fill="#ffffff" stroke="#91caff"/>
+    <text x="480" y="216" font-weight="700" fill="#1f1f1f">各语言库遵循 RFC 6455 实现协议细节</text>
+    <text x="480" y="234" fill="#595959">Node: ws · Python: websockets · Java: Netty</text>
+    <text x="480" y="250" fill="#595959">Go: gorilla/websocket · C#: SignalR</text>
+
+    <rect x="468" y="260" width="354" height="40" rx="8" fill="#ffffff" stroke="#91caff"/>
+    <text x="480" y="278" fill="#1f1f1f">调试登记：§11 IANA 注册表（子协议/关闭码/opcode）</text>
+    <text x="480" y="294" fill="#595959">3000-3999 需注册 · 4000-4999 私有</text>
+  </g>
+
+  <!-- 右：文档地图 -->
+  <text x="40" y="344" font-size="14" font-weight="700" fill="#1f1f1f">二、RFC 6455 文档地图（14 节正文）</text>
+
+  <g font-size="10.5">
+    <rect x="40" y="358" width="196" height="44" rx="8" fill="#f0f5ff" stroke="#2f54eb"/>
+    <text x="138" y="377" font-size="11.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">§1-2 背景与合规约定</text>
+    <text x="138" y="395" fill="#595959" text-anchor="middle">MUST/SHOULD/MAY (RFC 2119)</text>
+
+    <rect x="248" y="358" width="196" height="44" rx="8" fill="#f0f5ff" stroke="#2f54eb"/>
+    <text x="346" y="377" font-size="11.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">§3 URI 方案</text>
+    <text x="346" y="395" fill="#595959" text-anchor="middle">ws:// 80 · wss:// 443 (TLS)</text>
+
+    <rect x="456" y="358" width="196" height="44" rx="8" fill="#e6f4ff" stroke="#1677ff"/>
+    <text x="554" y="377" font-size="11.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">§4 打开握手</text>
+    <text x="554" y="395" fill="#595959" text-anchor="middle">HTTP 101 升级 · Key/Accept</text>
+
+    <rect x="664" y="358" width="176" height="44" rx="8" fill="#e6f4ff" stroke="#1677ff"/>
+    <text x="752" y="377" font-size="11.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">§5 数据帧</text>
+    <text x="752" y="395" fill="#595959" text-anchor="middle">opcode · 掩码 · 分片 · RSV</text>
+
+    <rect x="40" y="410" width="196" height="44" rx="8" fill="#f9f0ff" stroke="#722ed1"/>
+    <text x="138" y="429" font-size="11.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">§6 收发数据</text>
+    <text x="138" y="447" fill="#595959" text-anchor="middle">消息语义 · 背压责任</text>
+
+    <rect x="248" y="410" width="196" height="44" rx="8" fill="#f9f0ff" stroke="#722ed1"/>
+    <text x="346" y="429" font-size="11.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">§7 关闭连接</text>
+    <text x="346" y="447" fill="#595959" text-anchor="middle">Close 握手 · 码 1000-1015</text>
+
+    <rect x="456" y="410" width="196" height="44" rx="8" fill="#f9f0ff" stroke="#722ed1"/>
+    <text x="554" y="429" font-size="11.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">§8 错误处理</text>
+    <text x="554" y="447" fill="#595959" text-anchor="middle">非法 UTF-8 → 1007</text>
+
+    <rect x="664" y="410" width="176" height="44" rx="8" fill="#f9f0ff" stroke="#722ed1"/>
+    <text x="752" y="429" font-size="11.5" font-weight="700" fill="#1f1f1f" text-anchor="middle">§9 扩展协商</text>
+    <text x="752" y="447" fill="#595959" text-anchor="middle">Sec-WebSocket-Extensions</text>
+
+    <rect x="40" y="462" width="800" height="46" rx="8" fill="#fff1f0" stroke="#cf1322" stroke-width="2"/>
+    <text x="440" y="483" font-size="13" font-weight="700" fill="#a8071a" text-anchor="middle">§10 Security Considerations（本章 7.9.4 逐条解读）</text>
+    <text x="440" y="500" font-size="11.5" fill="#a8071a" text-anchor="middle">非浏览器客户端 · Origin · 掩码攻击面 · 资源上限 · 客户端认证 · 机密性 · 非法数据 · SHA-1 用途</text>
+
+    <rect x="40" y="516" width="800" height="30" rx="8" fill="#fafafa" stroke="#d9d9d9"/>
+    <text x="440" y="536" font-size="11.5" fill="#595959" text-anchor="middle">§11 IANA 注册（URI/头部/子协议/关闭码/opcode） · §14 参考引用</text>
+  </g>
+</svg>
